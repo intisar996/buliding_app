@@ -41,3 +41,9 @@ Route::get('custom/login{id}', 'CustomAuthController@Customlogin');
 Route::get('issus/list', 'IssuesController@list');
 
 Route::get('users', 'UsersController@export');
+
+Route::post('issus/import', 'IssuesController@importFromExcel');
+Route::view('issus-form', 'excel-import');
+
+
+

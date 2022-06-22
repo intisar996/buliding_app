@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 use App\Mail\isuuesrequestsubmitted;
+use App\Imports\isussImport;
+use Maatwebsite\Excel\Facades\Excel;
+
 use App\Issu;
 use Auth;
 use App\User;
+
 
 
 
@@ -60,6 +64,18 @@ class IssuesController extends Controller
     public function test(){
 
      return "this is test";
+
+    }
+
+    public function importFromExcel(Request $request)
+    {
+
+      
+
+      Excel::import(new isussImport,  $request->excelfile );
+
+      return "datd imported successfuly";
+
 
     }
 

@@ -7,19 +7,15 @@
     <title>Document</title>
 </head>
 <body>
-      
-@csrf
-            
-    @if(Auth::check())
+<form action="/issus/import" method="POST" enctype="multipart/form-data">
+    @csrf
+    <input type="file" name="excelfile" id="">
+    <input type="submit" value="submit">
 
-     Your name is {{Auth::user()->name}}
-     <br/>
-     Your Emaii is {{Auth::user()->email}}
 
-     @else
 
-     You are not log in
 
-    @endif
+
+</form>
 </body>
 </html>
